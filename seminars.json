@@ -359,6 +359,14 @@
       "photo": "",
       "date": "random",
       "time": "random time"
+    },
+    {
+      "id": "f647",
+      "title": "Cеминара",
+      "description": "Добавь описание",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Afifa_Afrin_Discussing_-_Women_Involvement_in_Bengali_Wikipedia_-_Bengali_Wikipedia_10th_Anniversary_Celebration_-_Daffodil_International_University_-_Dhaka_2015-05-30_1629-1634.tif/lossy-page1-1920px-thumbnail.tif.jpg",
+      "date": "random",
+      "time": "random time"
     }
   ]
 }

@@ -1,3 +1,4 @@
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { SeminarCard } from "./SeminarCard";
 import { AddCard } from "./AddCard";
 import { useSeminarsContext } from "@/seminarContext";
@@ -22,8 +23,13 @@ export function SeminarList() {
     }
 
     return (
-        <div className="grid grid-cols-3 gap-3">
-            {content}
-        </div>
+        <ResponsiveMasonry
+            columnsCountBreakPoints={{ 0: 1, 600: 2, 1000: 3 }}
+            gutterBreakPoints={{ 0: "10px", 600: "13px", 1000: "14px" }}
+        >
+            <Masonry>
+                {content}
+            </Masonry>
+        </ResponsiveMasonry>
     )
 }
