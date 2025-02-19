@@ -19,7 +19,7 @@ export function ImageLinkPreview({ link, setLink }: IImageLinkPreview) {
                 <Button onPointerUp={() => setIsPreview(true)}><Image /><span>Preview</span></Button>
             </div>)
             : (<div>
-                <img src={link} alt="изображение семинара" className="rounded-lg" />
+                <img src={link ? link : undefined} alt="изображение семинара" className="rounded-lg" />
                 <Button onPointerUp={() => setIsPreview(false)}>Изменить</Button>
             </div>)
     )

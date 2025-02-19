@@ -12,7 +12,6 @@ import { useCallback, useRef, useState } from "react";
 import { EditableText } from "./EditableText";
 import { ImageLinkPreview } from "./ImageLinkPreview";
 import { ISeminar } from "@/api/seminar-service-types";
-import { addSeminar } from "@/api/seminar-service";
 import { useSeminarsContext } from "@/seminarContext";
 
 const DEFAULT_TITLE = "Название семинара";
