@@ -8,20 +8,20 @@ export interface ISeminar {
     description: string;
     date: string;
     time: TimeString;
-    photo: string; // сузить как url 
+    photo: URLString;
 }
 
 export type Keys = 'date' | 'description' | 'title' | 'time' | 'photo';
 
 // Типизация строкового времени в формате HH:MM (24 часовой формат)
-type Hours =
+export type Hours =
     | `0${0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}` // 00-09
     | `1${0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}` // 10-19
     | `2${0 | 1 | 2 | 3}`;                        // 20-23
 
-type Minutes = `${0 | 1 | 2 | 3 | 4 | 5}${0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}`; // 00-59
+export type Minutes = `${0 | 1 | 2 | 3 | 4 | 5}${0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9}`; // 00-59
 
-type TimeString = `${Hours}:${Minutes}`;
+export type TimeString = `${Hours}:${Minutes}`;
 
 // Приблизительная типизация строковой даты в формате DD.MM.YYYY
 type Day =
@@ -36,3 +36,7 @@ type Month =
 type Year = `${number}${number}${number}${number}`; // 0000-9999 (упрощённо)
 
 export type DateString = `${Day}.${Month}.${Year}`;
+
+// Поверхностная типизация url
+type URLProtocol = "http://" | "https://";
+type URLString = `${URLProtocol}${string}`;

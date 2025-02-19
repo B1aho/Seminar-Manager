@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 import { MyInput } from "./MyInput";
 import { ImageLinkPreview } from "./ImageLinkPreview";
 import { useSeminarsContext } from "@/seminarContext";
+import { formatTimeToHHMM, parseHHMMToDate } from "./time-picker/time-picker-utils";
 
 type EditDialogType = ISeminar & { cardId: number }
 
@@ -21,10 +22,13 @@ export function EditDialog({
     const [newDesc, setNewDesc] = useState(description);
     const [newDate, setNewDate] = useState(date);
     const [photoLink, setPhotoLink] = useState<string | null>(photo);
-    const [newTime, setNewTime] = useState(time);
+    const [timeD, setTimeD] = useState<Date>(parseHHMMToDate(time));
+
 
     const { updateSeminar } = useSeminarsContext();
     const updateField = useCallback((data: Partial<ISeminar>) => {
+        if (data.time)
+            data.time = formatTimeToHHMM(data.time);
         updateSeminar(cardId, data);
     }, [cardId, updateSeminar])
     return (
@@ -50,7 +54,7 @@ export function EditDialog({
                         <MyInput id="new-date" setVal={setNewDate} val={newDate} keyProp="date" onConfirm={updateField}>
                             Дата семинара:
                         </MyInput>
-                        <MyInput id="new-time" setVal={setNewTime} val={newTime} keyProp="time" onConfirm={updateField}>
+                        <MyInput id="new-time" setTime={setTimeD} time={timeD} keyProp="time" onConfirm={updateField}>
                             Время семинара:
                         </MyInput>
                     </div>

@@ -3,24 +3,30 @@ import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { Check } from "lucide-react";
 import { ISeminar, Keys } from "@/api/seminar-service-types";
+import { TimePicker } from "./time-picker/TimePicker";
 
 interface IMyInput {
     id: string;
-    val: string;
+    val?: string;
     keyProp: Keys;
-    setVal: (newVal: string) => void;
+    setVal?: (newVal: string) => void;
+    time?: Date | undefined;
+    setTime?: (val: Date | undefined) => void;
     children: string;
     onConfirm: (data: Partial<ISeminar>) => void
 }
 
-export function MyInput({ id, val, setVal, children, onConfirm, keyProp }: IMyInput) {
+export function MyInput({ id, val, setVal, children, onConfirm, keyProp, time, setTime }: IMyInput) {
     return (
         <div className="flex justify-between items-center outline-black outline-1">
             <div className="flex flex-col">
                 <Label htmlFor={id}>{children}</Label>
-                <Input value={val} onInput={(e) => setVal(e.currentTarget.value)} id={id} />
+                {!setTime
+                    ? <Input value={val} onInput={(e) => setVal && setVal(e.currentTarget.value)} id={id} />
+                    : <TimePicker date={time} setDate={setTime} />
+                }
             </div>
-            <Button onPointerUp={() => { onConfirm({ [keyProp]: val }) }}>
+            <Button onPointerUp={() => { onConfirm({ [keyProp]: !time ? val : time }) }}>
                 <Check />
                 <span>Изменить</span>
             </Button>
