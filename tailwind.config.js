@@ -4,6 +4,10 @@ export default {
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
   	extend: {
+		animation: {
+			// Определяем анимацию fast-spin с длительностью 0.5s
+			'fast-spin': 'spin 0.5s linear infinite',
+		  },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

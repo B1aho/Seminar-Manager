@@ -7,9 +7,8 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { Button } from "./ui/button";
 import { EditDialog } from "./EditDialog";
-import { Trash2 } from "lucide-react";
+import { RemoveDialog } from "./RemoveDialog";
 
 export function SeminarCard({
     date,
@@ -39,12 +38,7 @@ export function SeminarCard({
             <CardFooter>
                 <div className="flex gap-3">
                     <EditDialog id={id} date={date} description={description} cardId={id} photo={photo} time={time} title={title} />
-
-                    <Button
-                        className="hover:bg-red-500" variant="ghost"
-                    >
-                        <Trash2 />
-                    </Button>
+                    <RemoveDialog cardId={id} />
                 </div>
             </CardFooter>
         </Card>

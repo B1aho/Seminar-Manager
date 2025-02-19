@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { ISeminar } from './api/seminar-service-types';
-import { getSeminars, patchSeminar, postSeminar } from './api/seminar-service';
+import { deleteSeminar, getSeminars, patchSeminar, postSeminar } from './api/seminar-service';
 import { useToast } from './hooks/use-toast';
 import { Toaster } from './components/ui/toaster';
 
@@ -12,11 +12,12 @@ export interface ISeminarContext {
     error: string | null;
     addSeminar: (data: Omit<ISeminar, 'id'>) => Promise<void>;
     updateSeminar: (id: number, data: Partial<ISeminar>) => Promise<void>;
+    removeSeminar: (id: number) => Promise<void>;
 }
 
 export const SeminarContextProvider = ({ children }: { children: ReactNode }) => {
     const [seminars, setSeminars] = useState<ISeminar[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
+    const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const { toast } = useToast()
 
@@ -73,12 +74,34 @@ export const SeminarContextProvider = ({ children }: { children: ReactNode }) =>
         }
     }
 
+    const removeSeminar = async (id: number) => {
+        try {
+            setLoading(true)
+            await deleteSeminar(id)
+            setSeminars((prevData) => {
+                const newData: ISeminar[] = prevData.filter((sem) => sem.id !== id)
+                return [...newData]
+            })
+        } catch (err) {
+            setError((err as Error).message);
+            console.error(err);
+        } finally {
+            setTimeout(() => {
+                setLoading(false)
+                toast({
+                    title: "Успех",
+                    description: `Указанный семинар был успешно удалён!`,
+                })
+            }, 1000)
+        }
+    }
+
     useEffect(() => {
         fetchSeminars()
     }, [])
 
     return (
-        <SeminarContext.Provider value={{ seminars, loading, error, addSeminar, updateSeminar }}>
+        <SeminarContext.Provider value={{ seminars, loading, error, addSeminar, updateSeminar, removeSeminar }}>
             {children}
             <Toaster />
         </SeminarContext.Provider>
