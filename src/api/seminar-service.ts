@@ -1,5 +1,5 @@
 import { apiFetch } from "./api-fetch";
-import { IResponse, ISeminar } from "./api-fetch-types";
+import { IResponse, ISeminar } from "./seminar-service-types";
 
 export async function getSeminars(): Promise<IResponse> {
     return apiFetch<IResponse>('/seminars');

@@ -1,4 +1,4 @@
-import { IResponse } from "@/api/api-fetch-types";
+import { IResponse } from "@/api/seminar-service-types";
 import { getSeminars } from "@/api/seminar-service";
 import { useEffect, useState } from "react";
 
