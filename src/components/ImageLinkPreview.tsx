@@ -3,14 +3,16 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { useState } from "react";
+import { ISeminar, Keys } from "@/api/seminar-service-types";
 
 interface IImageLinkPreview {
     link: string | null;
     setLink: (val: string | null) => void;
-    onConfirm?: () => void;
+    onConfirm?: (data: Partial<ISeminar>) => void;
+    keyProp?: Keys;
 }
 
-export function ImageLinkPreview({ link, setLink, onConfirm }: IImageLinkPreview) {
+export function ImageLinkPreview({ link, setLink, onConfirm, keyProp }: IImageLinkPreview) {
     const [isPreview, setIsPreview] = useState(false);
     return (
         !isPreview
@@ -25,7 +27,7 @@ export function ImageLinkPreview({ link, setLink, onConfirm }: IImageLinkPreview
                 <img src={link ? link : undefined} alt="изображение семинара" className={"rounded-lg " + (onConfirm ? " max-w-60" : " ")} />
                 <div className="flex flex-col gap-4 items-center">
                     <Button className="w-full" onPointerUp={() => setIsPreview(false)}>Назад</Button>
-                    {onConfirm && <Button className="" onPointerUp={() => onConfirm()}>
+                    {(onConfirm && keyProp) && <Button className="" onPointerUp={() => onConfirm({ [keyProp]: link })}>
                         <Check />
                         <span>Изменить</span>
                     </Button>}

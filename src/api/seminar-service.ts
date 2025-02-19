@@ -15,7 +15,7 @@ export async function deleteSeminar(id: number): Promise<ISeminar> {
     });
 }
 
-export async function updateSeminar(id: number, data: Partial<ISeminar>): Promise<ISeminar> {
+export async function patchSeminar(id: number, data: Partial<ISeminar>): Promise<ISeminar> {
     return apiFetch<ISeminar>(`/seminars/${id}`, {
         method: 'PATCH',
         body: JSON.stringify(data),

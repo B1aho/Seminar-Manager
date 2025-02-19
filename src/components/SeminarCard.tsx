@@ -38,7 +38,7 @@ export function SeminarCard({
             </CardContent>
             <CardFooter>
                 <div className="flex gap-3">
-                    <EditDialog date={date} description={description} id={id} photo={photo} time={time} title={title} />
+                    <EditDialog id={id} date={date} description={description} cardId={id} photo={photo} time={time} title={title} />
 
                     <Button
                         className="hover:bg-red-500" variant="ghost"

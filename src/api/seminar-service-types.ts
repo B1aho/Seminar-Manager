@@ -10,3 +10,5 @@ export interface ISeminar {
     time: string; // сузить к временному формату
     photo: string; // сузить как url 
 }
+
+export type Keys = 'date' | 'description' | 'title' | 'time' | 'photo';

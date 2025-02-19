@@ -1,6 +1,8 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { ISeminar } from './api/seminar-service-types';
-import { getSeminars, postSeminar } from './api/seminar-service';
+import { getSeminars, patchSeminar, postSeminar } from './api/seminar-service';
+import { useToast } from './hooks/use-toast';
+import { Toaster } from './components/ui/toaster';
 
 export const SeminarContext = createContext<ISeminarContext | null>(null);
 
@@ -9,13 +11,14 @@ export interface ISeminarContext {
     loading: boolean;
     error: string | null;
     addSeminar: (data: Omit<ISeminar, 'id'>) => Promise<void>;
-    // getSeminars: () => Promise<void>
+    updateSeminar: (id: number, data: Partial<ISeminar>) => Promise<void>;
 }
 
 export const SeminarContextProvider = ({ children }: { children: ReactNode }) => {
     const [seminars, setSeminars] = useState<ISeminar[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const { toast } = useToast()
 
     const fetchSeminars = async () => {
         try {
@@ -44,13 +47,40 @@ export const SeminarContextProvider = ({ children }: { children: ReactNode }) =>
         }
     }
 
+    const updateSeminar = async (id: number, data: Partial<ISeminar>) => {
+        try {
+            setLoading(true)
+            const seminar = await patchSeminar(id, data)
+            setSeminars((prevData) => {
+                const newData: ISeminar[] = prevData.map((sem) => {
+                    if (sem.id === id) {
+                        return { ...sem, ...seminar }
+                    } else {
+                        return sem
+                    }
+                })
+                return [...newData]
+            })
+        } catch (err) {
+            setError((err as Error).message);
+            console.error(err);
+        } finally {
+            setLoading(false)
+            toast({
+                title: "Успех",
+                description: `Данные семинара были успешно изменены!`,
+            })
+        }
+    }
+
     useEffect(() => {
         fetchSeminars()
     }, [])
 
     return (
-        <SeminarContext.Provider value={{ seminars, loading, error, addSeminar }}>
+        <SeminarContext.Provider value={{ seminars, loading, error, addSeminar, updateSeminar }}>
             {children}
+            <Toaster />
         </SeminarContext.Provider>
     );
 };
