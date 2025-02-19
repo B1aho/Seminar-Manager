@@ -1,9 +1,8 @@
-import { getSeminars } from './api/seminar-service'
 import './App.css'
-
+import { useGetSeminars } from './hooks/use-get-seminars'
 
 function App() {
-  getSeminars().then((res) => console.log(res));
+  const { seminars, isLoading, error } = useGetSeminars();
   return (
     <>
       <div>
