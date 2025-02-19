@@ -8,7 +8,8 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Button } from "./ui/button";
-import { Pencil, Trash2 } from "lucide-react";
+import { EditDialog } from "./EditDialog";
+import { Trash2 } from "lucide-react";
 
 export function SeminarCard({
     date,
@@ -31,14 +32,19 @@ export function SeminarCard({
                     <p>{date}</p>
                 </div>
                 <div className="flex justify-between items-center">
-                    <p>Во сколько?</p>
+                    <p>Время</p>
                     <p>{time}</p>
                 </div>
             </CardContent>
             <CardFooter>
                 <div className="flex gap-3">
-                    <Button className="hover:bg-neutral-400 min-w-4" variant="ghost"><Pencil /></Button>
-                    <Button className="hover:bg-red-500" variant="ghost"><Trash2 /></Button>
+                    <EditDialog date={date} description={description} id={id} photo={photo} time={time} title={title} />
+
+                    <Button
+                        className="hover:bg-red-500" variant="ghost"
+                    >
+                        <Trash2 />
+                    </Button>
                 </div>
             </CardFooter>
         </Card>

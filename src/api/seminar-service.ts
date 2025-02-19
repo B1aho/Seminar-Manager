@@ -5,6 +5,10 @@ export async function getSeminars(): Promise<ISeminar[]> {
     return apiFetch<ISeminar[]>('/seminars');
 }
 
+export async function getSeminar(id: number): Promise<ISeminar[]> {
+    return apiFetch<ISeminar[]>(`/seminars/${id}`);
+}
+
 export async function deleteSeminar(id: number): Promise<ISeminar> {
     return apiFetch<ISeminar>(`/seminars/${id}`, {
         method: 'DELETE',
