@@ -1,11 +1,11 @@
 /**
- * api-fetch - обертка над fetch для обработки HTTP запросов к json-server
+ * api-fetch - обертка над fetch для обработки HTTP запросов к seminar-server
  * 
  * Решил не тянуть axios, т.к. для такого миниатюрного проекта куда проще и эффективнее написать свою
  * обертку над Fetch API
  */
 
-// Базовый url для запросов к json-server
+// Базовый url для запросов к seminar-server
 const BASE_URL = "http://localhost:3000";
 
 /**
