@@ -1,33 +1,21 @@
-import { ISeminar } from "@/api/seminar-service-types"
-import { useState } from "react";
 import { SeminarCard } from "./SeminarCard";
 import { AddCard } from "./AddCard";
+import { useSeminarsContext } from "@/seminarContext";
 
-interface ISeminarListProps {
-    seminars: Promise<ISeminar[] | undefined>,
-    isLoading: boolean,
-    error: Error | null,
-}
-
-export function SeminarList({ seminars, isLoading, error }: ISeminarListProps) {
-    const [seminarsData, setSeminarsData] = useState<ISeminar[] | undefined>();
-
+export function SeminarList() {
+    const { seminars, error, loading } = useSeminarsContext();
     let content = null;
     if (error) {
         content = <div>Error</div> // Lottie с ошибкой
     }
 
-    if (isLoading) {
+    if (loading) {
         content = <div>Loading..</div> // Lottie с loading
     }
 
     if (seminars) {
-        seminars.then((res) => setSeminarsData(res))
-    }
-
-    if (seminarsData) {
-        console.log(seminarsData)
-        content = seminarsData.map(sem => {
+        console.log(seminars)
+        content = seminars.map(sem => {
             return <SeminarCard {...sem} />
         })
         content.push(<AddCard />)

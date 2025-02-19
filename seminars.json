@@ -1,85 +1,364 @@
 {
   "seminars": [
-  {
-    "id": 1,
-    "title": "Новинки Kosmoteros",
-    "description": "Обзор новых средств и методик от Kosmoteros.",
-    "date": "01.02.2025",
-    "time": "10:00",
-    "photo": "https://picsum.photos/id/1/750/730"
-  },
-  {
-    "id": 2,
-    "title": "Семинар по инновациям в косметологии",
-    "description": "Разбор новейших тенденций в косметологии и трендовых продуктов.",
-    "date": "03.02.2025",
-    "time": "11:00",
-    "photo": "https://picsum.photos/id/2/750/730"
-  },
-  {
-    "id": 3,
-    "title": "Технологии ухода за кожей",
-    "description": "Изучение современных методик ухода за кожей с применением новейших технологий.",
-    "date": "05.02.2025",
-    "time": "12:00",
-    "photo": "https://picsum.photos/id/3/750/730"
-  },
-  {
-    "id": 4,
-    "title": "Актуальные тренды в бьюти-индустрии",
-    "description": "Обсуждение современных трендов и методик в бьюти-индустрии.",
-    "date": "07.02.2025",
-    "time": "13:00",
-    "photo": "https://picsum.photos/id/4/750/730"
-  },
-  {
-    "id": 5,
-    "title": "Секреты профессионалов Kosmoteros",
-    "description": "Семинар с участием ведущих специалистов по использованию средств Kosmoteros.",
-    "date": "09.02.2025",
-    "time": "14:00",
-    "photo": "https://picsum.photos/id/5/750/730"
-  },
-  {
-    "id": 6,
-    "title": "Эффективные методики омоложения",
-    "description": "Обучение современным методикам омоложения и ухода за кожей.",
-    "date": "11.02.2025",
-    "time": "15:00",
-    "photo": "https://picsum.photos/id/6/750/730"
-  },
-  {
-    "id": 7,
-    "title": "Инновационные средства Kosmoteros",
-    "description": "Демонстрация новых продуктов Kosmoteros и их уникальных свойств.",
-    "date": "13.02.2025",
-    "time": "16:00",
-    "photo": "https://picsum.photos/id/7/750/730"
-  },
-  {
-    "id": 8,
-    "title": "Современные тренды в уходе за кожей",
-    "description": "Семинар о новейших трендах в уходе за кожей и эффективных методах лечения.",
-    "date": "15.02.2025",
-    "time": "17:00",
-    "photo": "https://picsum.photos/id/8/750/730"
-  },
-  {
-    "id": 9,
-    "title": "Мастер-класс от Kosmoteros",
-    "description": "Практический мастер-класс по использованию инновационных косметических средств.",
-    "date": "17.02.2025",
-    "time": "18:00",
-    "photo": "https://picsum.photos/id/9/750/730"
-  },
-  {
-    "id": 10,
-    "title": "Будущее косметологии с Kosmoteros",
-    "description": "Обсуждение перспектив развития косметологии и роли инноваций.",
-    "date": "19.02.2025",
-    "time": "19:00",
-    "photo": "https://picsum.photos/id/10/750/730"
-  }
-]
-
+    {
+      "id": "1",
+      "title": "Новинки Kosmoteros",
+      "description": "Обзор новых средств и методик от Kosmoteros.",
+      "date": "01.02.2025",
+      "time": "10:00",
+      "photo": "https://picsum.photos/id/1/750/730"
+    },
+    {
+      "id": "2",
+      "title": "Семинар по инновациям в косметологии",
+      "description": "Разбор новейших тенденций в косметологии и трендовых продуктов.",
+      "date": "03.02.2025",
+      "time": "11:00",
+      "photo": "https://picsum.photos/id/2/750/730"
+    },
+    {
+      "id": "3",
+      "title": "Технологии ухода за кожей",
+      "description": "Изучение современных методик ухода за кожей с применением новейших технологий.",
+      "date": "05.02.2025",
+      "time": "12:00",
+      "photo": "https://picsum.photos/id/3/750/730"
+    },
+    {
+      "id": "4",
+      "title": "Актуальные тренды в бьюти-индустрии",
+      "description": "Обсуждение современных трендов и методик в бьюти-индустрии.",
+      "date": "07.02.2025",
+      "time": "13:00",
+      "photo": "https://picsum.photos/id/4/750/730"
+    },
+    {
+      "id": "5",
+      "title": "Секреты профессионалов Kosmoteros",
+      "description": "Семинар с участием ведущих специалистов по использованию средств Kosmoteros.",
+      "date": "09.02.2025",
+      "time": "14:00",
+      "photo": "https://picsum.photos/id/5/750/730"
+    },
+    {
+      "id": "6",
+      "title": "Эффективные методики омоложения",
+      "description": "Обучение современным методикам омоложения и ухода за кожей.",
+      "date": "11.02.2025",
+      "time": "15:00",
+      "photo": "https://picsum.photos/id/6/750/730"
+    },
+    {
+      "id": "7",
+      "title": "Инновационные средства Kosmoteros",
+      "description": "Демонстрация новых продуктов Kosmoteros и их уникальных свойств.",
+      "date": "13.02.2025",
+      "time": "16:00",
+      "photo": "https://picsum.photos/id/7/750/730"
+    },
+    {
+      "id": "8",
+      "title": "Современные тренды в уходе за кожей",
+      "description": "Семинар о новейших трендах в уходе за кожей и эффективных методах лечения.",
+      "date": "15.02.2025",
+      "time": "17:00",
+      "photo": "https://picsum.photos/id/8/750/730"
+    },
+    {
+      "id": "9",
+      "title": "Мастер-класс от Kosmoteros",
+      "description": "Практический мастер-класс по использованию инновационных косметических средств.",
+      "date": "17.02.2025",
+      "time": "18:00",
+      "photo": "https://picsum.photos/id/9/750/730"
+    },
+    {
+      "id": "10",
+      "title": "Будущее косметологии с Kosmoteros",
+      "description": "Обсуждение перспектив развития косметологии и роли инноваций.",
+      "date": "19.02.2025",
+      "time": "19:00",
+      "photo": "https://picsum.photos/id/10/750/730"
+    },
+    {
+      "id": "08af",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "c659",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "4c06",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "3433",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "eccf",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "09bc",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "dfe2",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "26f5",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "42c8",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "136d",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "3d40",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "f769",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "b9ef",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "ca71",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "056d",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "77f5",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "cc09",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "e947",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "2b6b",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "9bc0",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "9cc7",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "e6a5",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "ee9e",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "1de3",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "b95f",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "6c68",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "0cc9",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": null,
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "615b",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": null,
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "c360",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": null,
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "f292",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": null,
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "0693",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": null,
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "a52d",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": null,
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "6852",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": null,
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "f7ae",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    },
+    {
+      "id": "074b",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "",
+      "date": "random",
+      "time": "random time"
+    }
+  ]
 }

@@ -18,7 +18,7 @@ export function SeminarCard({
 }: ISeminar) {
     return (
         <Card key={id}>
-            <CardHeader className="h-[25%]">
+            <CardHeader >
                 <CardTitle>{title}</CardTitle>
                 <CardDescription>{description}</CardDescription>
             </CardHeader>
