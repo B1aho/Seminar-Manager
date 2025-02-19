@@ -25,7 +25,7 @@ export function RemoveDialog({ cardId }: IRemoveDialogProps) {
         <Dialog modal={true}>
             <DialogTrigger>
                 <Button
-                    className="hover:bg-red-400" variant="ghost"
+                    className="hover:bg-red-400 border-x-[1px] border-y-[1px]" variant="ghost"
                 >
                     <Trash />
                 </Button>

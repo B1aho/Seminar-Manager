@@ -6,6 +6,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+
 import { SquarePlus } from "lucide-react";
 import { Button } from "./ui/button";
 import { useCallback, useRef, useState } from "react";
@@ -35,7 +36,7 @@ export function AddCard() {
             description: descRef.current?.innerText || 'Описание',
             photo: link || "",
             date: 'random',
-            time: 'random time',
+            time: '00:00',
         }
         addSeminar(seminar)
     }, [addSeminar, link])

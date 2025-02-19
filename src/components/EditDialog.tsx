@@ -7,6 +7,7 @@ import { MyInput } from "./MyInput";
 import { ImageLinkPreview } from "./ImageLinkPreview";
 import { useSeminarsContext } from "@/seminarContext";
 import { formatTimeToHHMM, parseHHMMToDate } from "./time-picker/time-picker-utils";
+import { convertMMDDToDDMM, DateInput } from "./DateInput";
 
 type EditDialogType = ISeminar & { cardId: number }
 
@@ -20,10 +21,9 @@ export function EditDialog({
 }: EditDialogType) {
     const [newTitle, setNewTitle] = useState(title);
     const [newDesc, setNewDesc] = useState(description);
-    const [newDate, setNewDate] = useState(date);
+    const [newDate, setNewDate] = useState(convertMMDDToDDMM(date));
     const [photoLink, setPhotoLink] = useState<string | null>(photo);
     const [timeD, setTimeD] = useState<Date>(parseHHMMToDate(time));
-
 
     const { updateSeminar } = useSeminarsContext();
     const updateField = useCallback((data: Partial<ISeminar>) => {
@@ -35,7 +35,7 @@ export function EditDialog({
         <Dialog modal={true}>
             <DialogTrigger>
                 <Button
-                    className="hover:bg-neutral-400" variant="ghost"
+                    className="hover:bg-neutral-400 border-x-[1px] border-y-[1px]" variant="ghost"
                 >
                     <Pencil />
                 </Button>
@@ -51,9 +51,7 @@ export function EditDialog({
                             Описание семинара:
                         </MyInput>
                         <ImageLinkPreview link={photoLink} setLink={setPhotoLink} onConfirm={updateField} keyProp="photo" />
-                        <MyInput id="new-date" setVal={setNewDate} val={newDate} keyProp="date" onConfirm={updateField}>
-                            Дата семинара:
-                        </MyInput>
+                        <DateInput keyProp="date" onConfirm={updateField} currDate={newDate} setCurrDate={setNewDate} />
                         <MyInput id="new-time" setTime={setTimeD} time={timeD} keyProp="time" onConfirm={updateField}>
                             Время семинара:
                         </MyInput>
