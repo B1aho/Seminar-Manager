@@ -41,9 +41,9 @@ export function EditDialog({
                 </Button>
             </DialogTrigger>
             <DialogContent className="scroll-auto">
-                <DialogHeader>
-                    <DialogTitle>Изменить данные семинара</DialogTitle>
-                    <div className="flex flex-col">
+                <DialogHeader className="relative">
+                    <DialogTitle className="font-bold">Изменить данные семинара:</DialogTitle>
+                    <div className="flex flex-col py-3">
                         <MyInput id="new-title" setVal={setNewTitle} val={newTitle} keyProp="title" onConfirm={updateField}>
                             Название семинара:
                         </MyInput>

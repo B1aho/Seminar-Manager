@@ -8,6 +8,7 @@ import { Button } from "./ui/button";
 import { CalendarIcon, Check } from "lucide-react";
 import { intlFormat } from "date-fns";
 import { ISeminar, Keys } from "@/api/seminar-service-types";
+import { Label } from "./ui/label";
 
 interface IDateInputProps {
     currDate: string;
@@ -25,33 +26,41 @@ export function DateInput({ currDate, setCurrDate, keyProp, onConfirm }: IDateIn
         locale: 'ru-RU'
     })
     return (
-        <Popover>
-            <PopoverTrigger asChild>
-                <Button
-                    variant={"outline"}
-                    className="w-[240px] pl-3 text-left font-normal"
-                >
-                    {
-                        currDate
-                            ? formattedDate
-                            : <span>Выбрать дату</span>
-                    }
-                    <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                </Button>
-            </PopoverTrigger>
-            <Button onPointerUp={() => { onConfirm({ [keyProp]: formattedDate }) }}>
-                <Check />
-                <span>Изменить</span>
-            </Button>
-            <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                    mode="single"
-                    selected={currDate}
-                    onSelect={setCurrDate}
-                    initialFocus
-                />
-            </PopoverContent>
-        </Popover>
+        <div className="my-2">
+            <Popover>
+                <PopoverTrigger asChild>
+                    <div className="flex justify-between items-center">
+                        <div className="flex flex-col w-[45%]">
+                            <Label className="mb-1" htmlFor='btn-input'>Выбор даты</Label>
+                            <Button
+                                id='btn-input'
+                                variant={"outline"}
+                                className="w-full pl-3 text-left font-normal"
+                            >
+                                {
+                                    currDate
+                                        ? formattedDate
+                                        : <span>Выбрать дату</span>
+                                }
+                                <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            </Button>
+                        </div>
+                        <Button onPointerUp={(e) => { e.preventDefault(); onConfirm({ [keyProp]: formattedDate }) }}>
+                            <Check />
+                            <span>Изменить</span>
+                        </Button>
+                    </div>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                        mode="single"
+                        selected={currDate}
+                        onSelect={setCurrDate}
+                        initialFocus
+                    />
+                </PopoverContent>
+            </Popover>
+        </div>
     )
 }
 

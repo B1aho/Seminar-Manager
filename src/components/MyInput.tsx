@@ -18,9 +18,9 @@ interface IMyInput {
 
 export function MyInput({ id, val, setVal, children, onConfirm, keyProp, time, setTime }: IMyInput) {
     return (
-        <div className="flex justify-between items-center outline-black outline-1">
-            <div className="flex flex-col">
-                <Label htmlFor={id}>{children}</Label>
+        <div className="flex justify-between items-center outline-black outline-1 mb-2">
+            <div className="flex flex-col w-[45%]">
+                <Label className="mb-1" htmlFor={id}>{children}</Label>
                 {!setTime
                     ? <Input value={val} onInput={(e) => setVal && setVal(e.currentTarget.value)} id={id} />
                     : <TimePicker date={time} setDate={setTime} />

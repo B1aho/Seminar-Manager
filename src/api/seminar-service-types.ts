@@ -8,7 +8,7 @@ export interface ISeminar {
     description: string;
     date: string;
     time: TimeString;
-    photo: URLString;
+    photo: URLString | string;
 }
 
 export type Keys = 'date' | 'description' | 'title' | 'time' | 'photo';
@@ -39,4 +39,4 @@ export type DateString = `${Day}.${Month}.${Year}`;
 
 // Поверхностная типизация url
 type URLProtocol = "http://" | "https://";
-type URLString = `${URLProtocol}${string}`;
+export type URLString = `${URLProtocol}${string}`;

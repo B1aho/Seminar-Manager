@@ -12,7 +12,7 @@ import { Button } from "./ui/button";
 import { useCallback, useRef, useState } from "react";
 import { EditableText } from "./EditableText";
 import { ImageLinkPreview } from "./ImageLinkPreview";
-import { ISeminar } from "@/api/seminar-service-types";
+import { ISeminar, URLString } from "@/api/seminar-service-types";
 import { useSeminarsContext } from "@/seminarContext";
 
 const DEFAULT_TITLE = "Название семинара";
@@ -22,7 +22,7 @@ export function AddCard() {
     const { addSeminar } = useSeminarsContext();
     const [keyTitle, setKeyTitle] = useState('1t');
     const [keyDesc, setKeyDesc] = useState('1d');
-    const [link, setLink] = useState<string | null>(null);
+    const [link, setLink] = useState<URLString | string>('http://');
     const titleRef = useRef<HTMLDivElement>(null);
     const descRef = useRef<HTMLDivElement>(null);
 
@@ -34,14 +34,14 @@ export function AddCard() {
         const seminar: Omit<ISeminar, 'id'> = {
             title: titleRef.current?.innerText || 'Название',
             description: descRef.current?.innerText || 'Описание',
-            photo: link || "",
-            date: 'random',
+            photo: link,
+            date: '01.01.2025',
             time: '00:00',
         }
         addSeminar(seminar)
     }, [addSeminar, link])
     return (
-        <Card key='123-last' className="flex flex-col justify-between">
+        <Card key='123-last' className="flex flex-col justify-between h-[600px] max-h-full">
             <CardHeader className="">
                 <CardTitle>
                     <EditableText
