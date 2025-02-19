@@ -1,8 +1,8 @@
 import { apiFetch } from "./api-fetch";
 import { IResponse, ISeminar } from "./seminar-service-types";
 
-export async function getSeminars(): Promise<IResponse> {
-    return apiFetch<IResponse>('/seminars');
+export async function getSeminars(): Promise<ISeminar[]> {
+    return apiFetch<ISeminar[]>('/seminars');
 }
 
 export async function deleteSeminar(id: number): Promise<IResponse> {

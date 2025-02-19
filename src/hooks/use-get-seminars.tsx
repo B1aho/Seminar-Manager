@@ -1,11 +1,11 @@
-import { IResponse } from "@/api/seminar-service-types";
+import { ISeminar } from "@/api/seminar-service-types";
 import { getSeminars } from "@/api/seminar-service";
 import { useEffect, useState } from "react";
 
 export function useGetSeminars() {
     const [isLoading, setIsLoading] = useState(false);
-    const [seminars, setSeminars] = useState<Promise<IResponse> | undefined>(undefined);
-    const [error, setError] = useState(new Error());
+    const [seminars, setSeminars] = useState<Promise<ISeminar[] | undefined>>(Promise.resolve(undefined));
+    const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
         try {

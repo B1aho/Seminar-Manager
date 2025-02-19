@@ -6,7 +6,9 @@ function App() {
   const { seminars, isLoading, error } = useGetSeminars();
   return (
     <>
-      <h1>Доступные семинары:</h1>
+      <h1 className='mb-6 text-3xl font-bold text-center'>
+        Доступные семинары
+      </h1>
       <SeminarList seminars={seminars} isLoading={isLoading} error={error} />
     </>
   )
