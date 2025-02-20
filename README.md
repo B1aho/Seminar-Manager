@@ -14,12 +14,12 @@ This project is designed primarily for local development as specified by the ass
 - git
 ### Installation & Running Locally
 1. Clone repo
-`git clone <your-repo-url>`
-`cd <your-repo-directory>`
+`git clone git@github.com:B1aho/Seminar-Manager.git`
+`cd cloned_repo`
 2. Install Dependencies
 `npm install`
 3. Start app: 
-The project includes both the React application and the JSON-server in the same repository. A single command will launch them concurrently.
+The project includes both the React application and the JSON-server in the same repository. A single command will launch them concurrently 
 `npm start`
 
 ## Features
@@ -27,3 +27,11 @@ The project includes both the React application and the JSON-server in the same 
 - Add Seminar Card: An inline editable card for quickly adding (POST) a new seminar.
 - Image Preview & Fallback Animations: Supports live image previews and fallback animations for various states.
 - Custom Fetch Wrapper: A lightweight wrapper around the fetch API for GET, POST, and other requests.
+
+## Screenshots
+![app screenshot](image.png)
+![app screenshot](image-1.png)
+![app screenshot](image-2.png)
+![app screenshot](image-3.png)
+![app screenshot](image-4.png)
+![app screenshot](image-5.png)
