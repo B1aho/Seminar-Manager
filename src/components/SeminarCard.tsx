@@ -10,6 +10,7 @@ import {
 import { EditDialog } from "./EditDialog";
 import { RemoveDialog } from "./RemoveDialog";
 import { Calendar, Clock } from "lucide-react";
+import { ImageSeminar } from "./ImageSeminar";
 
 export function SeminarCard({
     date,
@@ -26,7 +27,7 @@ export function SeminarCard({
                 <CardDescription>{description}</CardDescription>
             </CardHeader>
             <CardContent>
-                <img src={photo} className="rounded-lg" />
+                <ImageSeminar link={photo} />
                 <div className="flex mt-1 justify-between items-center">
                     <p className="font-semibold flex gap-1 items-center">
                         <span><Calendar size={15} /></span>

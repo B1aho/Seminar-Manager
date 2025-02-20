@@ -103,6 +103,22 @@
       "photo": "https://picsum.photos/id/5/750/730",
       "date": "27.02.2025",
       "time": "09:00"
+    },
+    {
+      "id": "bb2d",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "https://.photos/id/5/750/730",
+      "date": "03.01.2025",
+      "time": "12:00"
+    },
+    {
+      "id": "fdf5",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "https://picsum.photos/id/5/750/730",
+      "date": "03.01.2025",
+      "time": "12:00"
     }
   ]
 }

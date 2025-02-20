@@ -4,6 +4,7 @@ import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { useState } from "react";
 import { ISeminar, Keys, URLString } from "@/api/seminar-service-types";
+import { ImageSeminar } from "./ImageSeminar";
 
 interface IImageLinkPreview {
     link: string | null;
@@ -24,7 +25,7 @@ export function ImageLinkPreview({ link, setLink, onConfirm, keyProp }: IImageLi
                 <Button className="" onPointerUp={() => setIsPreview(true)}><Image /><span>Предпросмотр</span></Button>
             </div>)
             : (<div className="p-2 flex flex-col justify-between items-center">
-                <img src={link ? link : undefined} alt="изображение семинара" className={"rounded-lg mb-2 " + (onConfirm ? " max-w-60" : " ")} />
+                <ImageSeminar link={link} classes={'mb-2' + (onConfirm ? " max-w-60" : " ")} />
                 <div className="flex flex-col gap-2 items-center">
                     <Button className="w-full" onPointerUp={() => setIsPreview(false)}>Назад</Button>
                     {(onConfirm && keyProp) && <Button className="" onPointerUp={() => onConfirm({ [keyProp]: link })}>
