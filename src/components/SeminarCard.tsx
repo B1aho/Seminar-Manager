@@ -21,7 +21,7 @@ export function SeminarCard({
     title,
 }: ISeminar) {
     return (
-        <Card key={id} className="w-full">
+        <Card key={id} className="w-full select-none hover:scale-105 transition-all ease-in-out duration-500">
             <CardHeader >
                 <CardTitle>{title}</CardTitle>
                 <CardDescription>{description}</CardDescription>

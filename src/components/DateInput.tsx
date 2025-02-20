@@ -30,7 +30,7 @@ export function DateInput({ currDate, setCurrDate, keyProp, onConfirm }: IDateIn
             <Popover>
                 <PopoverTrigger asChild>
                     <div className="flex justify-between items-center">
-                        <div className="flex flex-col min-w-[100px] w-[45%]">
+                        <div className="flex flex-col min-w-[130px] w-[45%]">
                             <Label className="mb-1" htmlFor='btn-input'>Выбор даты</Label>
                             <Button
                                 id='btn-input'

@@ -8,7 +8,7 @@ interface IEditableTextProps {
 export function EditableText({ defaultContent, passRef }: IEditableTextProps) {
     return (
         <div
-            className="h-full text-ellipsis overflow-hidden"
+            className="h-full py-1 text-ellipsis overflow-hidden"
             contentEditable={true}
             ref={passRef}
         >

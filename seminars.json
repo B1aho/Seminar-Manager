@@ -108,15 +108,39 @@
       "id": "bb2d",
       "title": "Название семинара",
       "description": "Добавь описание",
-      "photo": "https://.photos/id/5/750/730",
+      "photo": "https://picsum.photos/id/5/750/730",
+      "date": "18.02.2025",
+      "time": "12:00"
+    },
+    {
+      "id": "987c",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "https://",
       "date": "03.01.2025",
       "time": "12:00"
     },
     {
-      "id": "fdf5",
+      "id": "0441",
       "title": "Название семинара",
       "description": "Добавь описание",
-      "photo": "https://picsum.photos/id/5/750/730",
+      "photo": "https://",
+      "date": "03.01.2025",
+      "time": "12:00"
+    },
+    {
+      "id": "9441",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "https://",
+      "date": "03.01.2025",
+      "time": "12:00"
+    },
+    {
+      "id": "b18c",
+      "title": "Название семинара",
+      "description": "Добавь описание",
+      "photo": "https://",
       "date": "03.01.2025",
       "time": "12:00"
     }

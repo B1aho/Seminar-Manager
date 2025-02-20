@@ -5,10 +5,10 @@
 /* ... */
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -78,4 +78,40 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Фон с точками */
+body {
+  --dot-bg: rgb(242, 241, 241);
+  --dot-color: rgba(0, 0, 0, 0.6);
+  --dot-size: 1px;
+  --dot-space: 21px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgb(215, 212, 212); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.151); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background:  rgba(198, 198, 198, 0.37); 
 }

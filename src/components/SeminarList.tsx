@@ -27,7 +27,7 @@ export function SeminarList() {
             {loading && loader}
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 0: 1, 600: 2, 1000: 3 }}
-                gutterBreakPoints={{ 0: "10px", 600: "13px", 1000: "14px" }}
+                gutterBreakPoints={{ 0: "20px", 600: "17px", 1000: "26px" }}
             >
                 <Masonry>
                     {content}
