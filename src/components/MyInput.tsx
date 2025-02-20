@@ -11,7 +11,7 @@ interface IMyInput {
     keyProp: Keys;
     setVal?: (newVal: string) => void;
     time?: Date | undefined;
-    setTime?: (val: Date | undefined) => void;
+    setTime?: (val: Date) => void;
     children: string;
     onConfirm: (data: Partial<ISeminar>) => void
 }

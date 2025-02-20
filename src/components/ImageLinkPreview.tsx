@@ -16,8 +16,8 @@ export function ImageLinkPreview({ link, setLink, onConfirm, keyProp }: IImageLi
     const [isPreview, setIsPreview] = useState(false);
     return (
         !isPreview
-            ? (<div className="h-full flex justify-between items-center">
-                <div className="w-[45%] ">
+            ? (<div className="h-full flex flex-col gap-3 justify-between items-center">
+                <div className="w-[80%]">
                     <Label htmlFor="img-ling">Ссылка на изображение</Label>
                     <Input id="img-link" value={link === null ? "" : link} onInput={(e) => setLink(e.currentTarget.value !== "" ? e.currentTarget.value : 'https://')} />
                 </div>

@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { EditDialog } from "./EditDialog";
 import { RemoveDialog } from "./RemoveDialog";
+import { Calendar, Clock } from "lucide-react";
 
 export function SeminarCard({
     date,
@@ -26,13 +27,19 @@ export function SeminarCard({
             </CardHeader>
             <CardContent>
                 <img src={photo} className="rounded-lg" />
-                <div className="flex justify-between items-center">
-                    <p>Дата семинара</p>
-                    <p>{date}</p>
+                <div className="flex mt-1 justify-between items-center">
+                    <p className="font-semibold flex gap-1 items-center">
+                        <span><Calendar size={15} /></span>
+                        <span>Дата семинара</span>
+                    </p>
+                    <p className="font-semibold">{date}</p>
                 </div>
                 <div className="flex justify-between items-center">
-                    <p>Время</p>
-                    <p>{time}</p>
+                    <p className="font-semibold flex gap-1 items-center">
+                        <span><Clock size={15} /></span>
+                        <span>Время</span>
+                    </p>
+                    <p className="font-semibold">{time}</p>
                 </div>
             </CardContent>
             <CardFooter>

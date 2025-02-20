@@ -13,8 +13,8 @@ import { Label } from "./ui/label";
 interface IDateInputProps {
     currDate: string;
     setCurrDate: (val: string) => void;
-    keyProp: Keys;
-    onConfirm: (data: Partial<ISeminar>) => void
+    keyProp?: Keys;
+    onConfirm?: (data: Partial<ISeminar>) => void
 }
 
 export function DateInput({ currDate, setCurrDate, keyProp, onConfirm }: IDateInputProps) {
@@ -30,7 +30,7 @@ export function DateInput({ currDate, setCurrDate, keyProp, onConfirm }: IDateIn
             <Popover>
                 <PopoverTrigger asChild>
                     <div className="flex justify-between items-center">
-                        <div className="flex flex-col w-[45%]">
+                        <div className="flex flex-col min-w-[100px] w-[45%]">
                             <Label className="mb-1" htmlFor='btn-input'>Выбор даты</Label>
                             <Button
                                 id='btn-input'
@@ -45,16 +45,16 @@ export function DateInput({ currDate, setCurrDate, keyProp, onConfirm }: IDateIn
                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                             </Button>
                         </div>
-                        <Button onPointerUp={(e) => { e.preventDefault(); onConfirm({ [keyProp]: formattedDate }) }}>
-                            <Check />
-                            <span>Изменить</span>
-                        </Button>
+                        {(onConfirm && keyProp) &&
+                            <Button onPointerUp={(e) => { e.preventDefault(); onConfirm({ [keyProp]: formattedDate }) }}>
+                                <Check />
+                                <span>Изменить</span>
+                            </Button>}
                     </div>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
                     <Calendar
                         mode="single"
-                        selected={currDate}
                         onSelect={setCurrDate}
                         initialFocus
                     />
